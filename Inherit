@@ -1,0 +1,173 @@
+//Importing Scanner Class To Take Users Input
+import java.util.Scanner;
+
+//defining class Food
+class Food{
+	 String Name;
+	 String Taste;
+	 String Color;
+	 
+	 //defining GetValue() Method For Class Food
+	 void GetValue() {
+		 System.out.println("\n***********************************************\n");
+		 System.out.println("You Have To Enter Following Details Of Food");
+		 System.out.println("\nEnter Name:\n");
+		 Scanner ch1 = new Scanner(System.in);
+		 Name=ch1.next();
+		 System.out.println("Enter Taste:");
+		 Scanner ch2 = new Scanner(System.in);
+		 Taste=ch2.next();
+		 System.out.println("Enter Color:");
+		 Scanner ch3 = new Scanner(System.in);
+		 Color=ch3.next();
+		 
+	 }
+	 
+	//defining Display() Method For Class Food
+	 void Display() {
+		 
+		 System.out.println("\nThis Food Name Has Following Properties : \n");
+		 System.out.println("!!!  Type of food can't Defined  !!!");
+		 System.out.println("Name    : "+Name);
+		 System.out.println("Taste   : "+Taste);
+		 System.out.println("Color   : "+Color+"\n");
+	 }
+}
+
+//defining class Fruit Inheriting Properties of Class Food
+class Fruit extends Food{
+	 String Content;
+	 String weight;
+	 String season;
+	 
+	//defining GetValue() Method For Class Fruit
+	 void GetValue() {
+		 System.out.println("\n***********************************************\n");
+		 System.out.println("You Have To Enter Following Details Of Fruit");
+		 System.out.println("\nEnter Name:\n\n");
+		 Scanner ch1 = new Scanner(System.in);
+		 Name=ch1.next();
+		 System.out.println("Enter Taste:");
+		 Scanner ch2 = new Scanner(System.in);
+		 Taste=ch2.next();
+		 System.out.println("Enter Color:");
+		 Scanner ch3 = new Scanner(System.in);
+		 Color=ch3.next();
+		 System.out.println("Enter Content:");
+		 Scanner ch4 = new Scanner(System.in);
+		 Content=ch4.next();
+		 System.out.println("Enter Weight:");
+		 Scanner ch5 = new Scanner(System.in);
+		 weight=ch5.next();
+		 System.out.println("Enter Season:");
+		 Scanner ch6 = new Scanner(System.in);
+		 season=ch6.next();
+		 
+		 
+	 }
+	 
+	//defining Display() Method For Class Food
+	 void Display() {
+		 
+		 System.out.println("\nThis Food Name Has Following Properties : \n");
+		 System.out.println("!!!  This is a Fruit  !!!");
+		 System.out.println("Name    : "+Name);
+		 System.out.println("Taste   : "+Taste);
+		 System.out.println("Color   : "+Color);
+		 System.out.println("Content : "+Content);
+		 System.out.println("Weight  : "+weight);
+		 System.out.println("Season  : "+season+"\n");
+	 }
+}
+
+//defining class Veg Inheriting Properties Of SuperClass Fruit and SuperClass Of SuperClassFruit i.e Food
+class Veg extends Fruit {
+	 String Type;
+	 
+	//defining GetValue() Method For Class Veg
+	 void GetValue() {
+		 System.out.println("\n***********************************************\n");
+		 System.out.println("You Have To Enter Following Details Of Vegetable\n");
+		 System.out.println("Enter Name:\n\n");
+		 Scanner ch1 = new Scanner(System.in);
+		 Name=ch1.next();
+		 System.out.println("Enter Taste:");
+		 Scanner ch2 = new Scanner(System.in);
+		 Taste=ch2.next();
+		 System.out.println("Enter Color:");
+		 Scanner ch3 = new Scanner(System.in);
+		 Color=ch3.next();
+		 System.out.println("Enter Content:");
+		 Scanner ch4 = new Scanner(System.in);
+		 Content=ch4.next();
+		 System.out.println("Enter weight:");
+		 Scanner ch5 = new Scanner(System.in);
+		 weight=ch5.next();
+		 System.out.println("Enter Season:");
+		 Scanner ch6 = new Scanner(System.in);
+		 season=ch6.next();
+		 System.out.println("Enter Type:");
+		 Scanner ch7 = new Scanner(System.in);
+		 Type=ch7.next();
+	 }
+	 
+	//defining Display() Method For Class Food
+	 void Display() {
+		 
+		 System.out.println("\nThis Food Name Has Following Properties : \n");
+		 System.out.println("!!!  This is a Vegetable  !!!");
+		 System.out.println("Name    : "+Name);
+		 System.out.println("Taste   : "+Taste);
+		 System.out.println("Color   : "+Color);
+		 System.out.println("Content : "+Content);
+		 System.out.println("Weight  : "+weight);
+		 System.out.println("Season  : "+season);
+		 System.out.println("Type    : "+Type+"\n");
+	 }
+}
+public class Inherit {
+
+	public static void main(String[] args) {
+		Food obj1 = new Food();			//obj1 is a Variable of Food Class Referencing to Object Of class Food
+		Food obj2 = new Fruit();		//obj2 is a Variable of Food Class Referencing to Object Of Sub-class Fruit
+		Food obj3 = new Veg();			//obj3 is a Variable of Food Class Referencing to Object Of Sub-class Veg
+		
+		// Check Program Further By Removing // From Below Created Objects
+		
+	//	Fruit obj4 = new Food();		//  !!  Will Generate Error As A Variable of SubClass Can't Access Object Of SuperClass
+		Fruit obj5 = new Fruit();		//obj5 is a Variable of Fruit Class Referencing to Object Of class Fruit
+		Fruit obj6 = new Veg();			//obj6 is a Variable of Fruit Class Referencing to Object Of Sub-class Veg
+		
+	//	Veg obj7 = new Food();			//  !!  Will Generate Error As A Variable of SubClass Can't Access Object Of SuperClass
+	//	Veg obj8 = new Fruit();			//  !!  Will Generate Error As A Variable of SubClass Can't Access Object Of SuperClass
+		Veg obj9 = new Veg();			//obj9 is a Variable of Veg Class Referencing to Object Of class Veg
+		
+		obj1.GetValue();
+		obj1.Display();
+		
+		obj2.GetValue();
+		obj2.Display();
+		
+		obj3.GetValue();
+		obj3.Display();
+		
+	//	obj4.GetValue();
+	//	obj4.Display();
+		
+		obj5.GetValue();
+		obj5.Display();
+		
+		obj6.GetValue();
+		obj6.Display();
+		
+	//	obj7.GetValue();
+	//	obj7.Display();
+		
+	//	obj8.GetValue();
+	//	obj8.Display();
+		
+		obj9.GetValue();
+		obj9.Display();
+		
+		}
+}
